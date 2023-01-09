@@ -1,21 +1,22 @@
-﻿
-using System;
-namespace Delegate
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace GridviewExample
 {
-    delegate int AddDelegate(int a, int b);
-
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            AddDelegate addDelegate = Add;
-
-            Console.WriteLine(addDelegate(7, 6));
-        }
-
-        static int Add(int a, int b)
-        {
-            return a + b;
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }
